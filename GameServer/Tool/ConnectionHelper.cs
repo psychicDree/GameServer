@@ -17,5 +17,13 @@ namespace GameServer.Tool
             conn.Open();
             return conn;
         }
+
+        public static void CloseConnection(MySqlConnection connection)
+        {
+            if (connection != null)
+                connection.Close();
+            else
+                Console.WriteLine("MysqlConnection is null");
+        }
     }
 }
