@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GameServer.Servers;
+
 namespace GameServer
 {
     internal class Program
     {
-        private Server server;
         static void Main(string[] args)
         {
-            Server server = new Server("192.168.43.95", 88);
+            Server server = new Server("127.0.0.1", 6688);
             server.StartServer();
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }
