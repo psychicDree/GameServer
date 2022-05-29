@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+
 using System.Security.Permissions;
 using Common;
 using GameServer.Controller;
@@ -27,11 +28,13 @@ namespace GameServer.Servers
         { 
             serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             serverSocket.Bind(ipEndPoint);
-            serverSocket.BeginAccept(AcceptCallback,null);
+            serverSocket.Listen(1000);
+            serverSocket.BeginAccept(AcceptCallback, null);
         }
 
         private void AcceptCallback(IAsyncResult ar)
         {
+            Console.WriteLine("Sever Connect "+ar.AsyncState);
             Socket clientSocket = serverSocket.EndAccept(ar);
             Client client = new Client(clientSocket, this);
             clientList.Add(client);

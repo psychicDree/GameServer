@@ -9,13 +9,20 @@ namespace GameServer.Tool
     internal class ConnectionHelper
     {
         private const string CONNECTIONTODB =
-            "datasource=db-gameserver01.cc6u8pgmf3md.ap-south-1.rds.amazonaws.com;port=3306;database=sys;user=admin;pwd=admin123;";
+            "datasource=remotemysql.com;port=3306;database=253U0l32wa;UserID=253U0l32wa;Password=WLCv8ca8Bz;";
 
         public static MySqlConnection Connect()
         {
             MySqlConnection conn = new MySqlConnection(CONNECTIONTODB);
             conn.Open();
             return conn;
+        }
+        public static void CloseConnection(MySqlConnection connection)
+        {
+            if (connection != null)
+                connection.Close();
+            else
+                Console.WriteLine("MysqlConnection is null");
         }
     }
 }
