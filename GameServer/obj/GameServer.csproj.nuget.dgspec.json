@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp\\Documents\\GameServer\\GameServer\\GameServer\\GameServer.csproj": {}
+    "E:\\Github\\GameServer\\GameServer\\GameServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp\\Documents\\GameServer\\GameServer\\Common\\Common.csproj": {
+    "E:\\Github\\GameServer\\Common\\Common.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Documents\\GameServer\\GameServer\\Common\\Common.csproj",
+        "projectUniqueName": "E:\\Github\\GameServer\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "C:\\Users\\hp\\Documents\\GameServer\\GameServer\\Common\\Common.csproj",
+        "projectPath": "E:\\Github\\GameServer\\Common\\Common.csproj",
         "frameworks": {
           "net20": {
             "projectReferences": {}
@@ -19,31 +19,32 @@
         "net20": {}
       }
     },
-    "C:\\Users\\hp\\Documents\\GameServer\\GameServer\\GameServer\\GameServer.csproj": {
+    "E:\\Github\\GameServer\\GameServer\\GameServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Documents\\GameServer\\GameServer\\GameServer\\GameServer.csproj",
+        "projectUniqueName": "E:\\Github\\GameServer\\GameServer\\GameServer.csproj",
         "projectName": "GameServer",
-        "projectPath": "C:\\Users\\hp\\Documents\\GameServer\\GameServer\\GameServer\\GameServer.csproj",
-        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Documents\\GameServer\\GameServer\\GameServer\\obj\\",
+        "projectPath": "E:\\Github\\GameServer\\GameServer\\GameServer.csproj",
+        "packagesPath": "C:\\Users\\devma\\.nuget\\packages\\",
+        "outputPath": "E:\\Github\\GameServer\\GameServer\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\devma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net472"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\hp\\Documents\\GameServer\\GameServer\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\hp\\Documents\\GameServer\\GameServer\\Common\\Common.csproj"
+              "E:\\Github\\GameServer\\Common\\Common.csproj": {
+                "projectPath": "E:\\Github\\GameServer\\Common\\Common.csproj"
               }
             }
           }
