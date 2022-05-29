@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
+
 namespace GameServer.Servers
 {
     internal class Message
     {
-        private byte[] data = new byte[];
+        private byte[] data = new byte[] {};
         private int startIndex = 0;
 
         public byte[] Data
