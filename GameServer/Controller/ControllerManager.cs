@@ -10,7 +10,7 @@ namespace GameServer.Controller
 {
     internal class ControllerManager
     {
-        private Dictionary<RequestCode,BaseController> controllerDict = new Dictionary<RequestCode,BaseController>();
+        private Dictionary<RequestCode, BaseController> controllerDict = new Dictionary<RequestCode, BaseController>();
 
         private Server server;
         public ControllerManager(Server server)
@@ -23,6 +23,7 @@ namespace GameServer.Controller
         {
             DefaultController defaultController = new DefaultController();
             controllerDict.Add(defaultController.RequestCode,defaultController);
+            controllerDict.Add(RequestCode.User,new UserController());
         }
 
         public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data,Client client)
@@ -32,6 +33,7 @@ namespace GameServer.Controller
             if (!isGet)
             {
                 Console.WriteLine("Cannot find controller for: " + requestCode);
+                return;
             }
 
             string methodName = Enum.GetName(typeof(ActionCode), actionCode);
@@ -45,7 +47,7 @@ namespace GameServer.Controller
             object[] parameters = new object[] { data, client, server };
             object obj = methodInfo.Invoke(controller, parameters);
             if(obj == null)return;
-            server.SendResponse(client, requestCode, obj as string);
+            server.SendResponse(client, actionCode, obj as string);
         }
     }
 }

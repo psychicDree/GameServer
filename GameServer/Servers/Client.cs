@@ -15,17 +15,18 @@ namespace GameServer.Servers
         private Socket clientSocket;
         private Server server;
         private Message message = new Message();
-        private MySqlConnection connection;
+        private MySqlConnection mySqlConnection;
+        public MySqlConnection MySqlConnection =>mySqlConnection;
         public Client(Socket clientSocket, Server server)
         {
             this.clientSocket = clientSocket;
             this.server = server;
-            this.connection = ConnectionHelper.Connect();
+            this.mySqlConnection = ConnectionHelper.Connect();
         }
 
-        public void SendFromClient(RequestCode requestCode, string data)
+        public void SendFromClient(ActionCode actionCode, string data)
         {
-            byte[] bytes = Message.PackData(requestCode, data);
+            byte[] bytes = Message.PackData(actionCode, data);
             clientSocket.Send(bytes);
         }
         public void StartRecieving()
@@ -46,9 +47,10 @@ namespace GameServer.Servers
 
         private void CloseRecieving()
         {
-            ConnectionHelper.CloseConnection(connection);
+            ConnectionHelper.CloseConnection(mySqlConnection);
             if (clientSocket != null)
             {
+                clientSocket.Shutdown(SocketShutdown.Both);
                 clientSocket.Close();
             }
             server.RemoveClient(this);

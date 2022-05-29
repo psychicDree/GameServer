@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
-
-using System.Security.Permissions;
 using Common;
 using GameServer.Controller;
 
@@ -28,16 +23,18 @@ namespace GameServer.Servers
         { 
             serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             serverSocket.Bind(ipEndPoint);
-            serverSocket.Listen(1000);
+            serverSocket.Listen(0);
             serverSocket.BeginAccept(AcceptCallback, null);
         }
 
         private void AcceptCallback(IAsyncResult ar)
         {
-            Console.WriteLine("Sever Connect "+ar.AsyncState);
+            Console.WriteLine("Sever Connected...");
             Socket clientSocket = serverSocket.EndAccept(ar);
             Client client = new Client(clientSocket, this);
+            client.StartRecieving();
             clientList.Add(client);
+            serverSocket.BeginAccept(AcceptCallback, null);
         }
 
         public void RemoveClient(Client client)
@@ -48,9 +45,9 @@ namespace GameServer.Servers
             }
         }
 
-        public void SendResponse(Client client, RequestCode requestCode, string data)
+        public void SendResponse(Client client, ActionCode actionCode, string data)
         {
-            client.SendFromClient(requestCode, data);
+            client.SendFromClient(actionCode, data);
         }
 
         public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, Client client)

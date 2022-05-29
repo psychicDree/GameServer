@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using Common;
 
 namespace GameServer.Servers
@@ -33,28 +33,32 @@ namespace GameServer.Servers
         public void ReadMessage(int newDataAmount, Action<RequestCode, ActionCode, string> OnProcessDataCallback)
         {
             startIndex += newDataAmount;
-            if(startIndex<=4)return;
-            int count = BitConverter.ToInt32(data, 0);
-            if (startIndex - 4 >= count)
+            while (true)
             {
-                RequestCode requestCode = (RequestCode)BitConverter.ToInt32(data, 4);
-                ActionCode actionCode = (ActionCode)BitConverter.ToInt32(data, 8);
-                string str = Encoding.UTF8.GetString(data, 12, count - 4);
-                OnProcessDataCallback(requestCode, actionCode, str);
-                Array.Copy(data, count + 4, data, 0, startIndex - 4 - count);
-                startIndex = count + 4;
+                if (startIndex <= 4) return;
+                int count = BitConverter.ToInt32(data, 0);
+                if (startIndex - 4 >= count)
+                {
+                    RequestCode requestCode = (RequestCode)BitConverter.ToInt32(data, 4);
+                    ActionCode actionCode = (ActionCode)BitConverter.ToInt32(data, 8);
+                    string str = Encoding.UTF8.GetString(data, 12, count - 4);
+                    OnProcessDataCallback(requestCode, actionCode, str);
+                    Array.Copy(data, count + 4, data, 0, startIndex - 4 - count);
+                    startIndex -= count + 4;
+                }
+                else
+                    break;
             }
-            else
-                return;
+            
         }
 
-        public static byte[] PackData(RequestCode requestCode, string data)
+        public static byte[] PackData(ActionCode actionCode, string data)
         {
-            byte[] requestCodeBytes = BitConverter.GetBytes((int)requestCode);
+            byte[] actionCodeBytes = BitConverter.GetBytes((int)actionCode);
             byte[] dataBytes = Encoding.UTF8.GetBytes(data);
-            int newDataAmount = requestCodeBytes.Length + dataBytes.Length;
+            int newDataAmount = actionCodeBytes.Length + dataBytes.Length;
             byte[] newDataAmountBytes = BitConverter.GetBytes(newDataAmount);
-            return newDataAmountBytes.Concat(requestCodeBytes).ToArray().Concat(dataBytes).ToArray();
+            return newDataAmountBytes.Concat(actionCodeBytes).ToArray().Concat(dataBytes).ToArray();
 
         }
     }
