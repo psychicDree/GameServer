@@ -1,0 +1,3 @@
+E:\Github\GameServer\GameServer\obj\Debug\GameServer.csproj.AssemblyReference.cache
+E:\Github\GameServer\GameServer\obj\Debug\GameServer.csproj.SuggestedBindingRedirects.cache
+E:\Github\GameServer\GameServer\obj\Debug\GameServer.csproj.CoreCompileInputs.cache
