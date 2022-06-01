@@ -9,7 +9,7 @@ namespace GameServer.Servers
 {
     internal class Message
     {
-        private byte[] data = new byte[] {};
+        private byte[] data = new byte[1024];
         private int startIndex = 0;
 
         public byte[] Data
