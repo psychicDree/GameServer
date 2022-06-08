@@ -29,20 +29,17 @@ namespace GameServer.Servers
 
         private void AcceptCallback(IAsyncResult ar)
         {
-            Console.WriteLine("Sever Connected...");
             Socket clientSocket = serverSocket.EndAccept(ar);
             Client client = new Client(clientSocket, this);
             client.StartRecieving();
-            clientList.Add(client);
+            lock (clientList) clientList.Add(client);
             serverSocket.BeginAccept(AcceptCallback, null);
+            Console.WriteLine("Client Connected");
         }
 
         public void RemoveClient(Client client)
         {
-            lock (clientList)
-            {
-                clientList.Remove(client);
-            }
+            lock (clientList) clientList.Remove(client);
         }
 
         public void SendResponse(Client client, ActionCode actionCode, string data)

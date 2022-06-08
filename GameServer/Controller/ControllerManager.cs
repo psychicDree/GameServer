@@ -22,8 +22,8 @@ namespace GameServer.Controller
         private void OnInit()
         {
             DefaultController defaultController = new DefaultController();
-            controllerDict.Add(defaultController.RequestCode,defaultController);
-            controllerDict.Add(RequestCode.User,new UserController());
+            controllerDict.Add(defaultController.RequestCode, new DefaultController());
+            controllerDict.Add(RequestCode.User, new UserController());
         }
 
         public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data,Client client)

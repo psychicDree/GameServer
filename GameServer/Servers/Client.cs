@@ -31,21 +31,21 @@ namespace GameServer.Servers
         }
         public void StartRecieving()
         {
-            clientSocket.BeginReceive(message.Data, message.StartIndex, message.RemainSize, SocketFlags.None, RecieveCallback, null);
+            clientSocket.BeginReceive(message.Data, message.StartIndex, message.RemainSize, SocketFlags.None, ReceiveCallback, null);
         }
 
-        private void RecieveCallback(IAsyncResult ar)
+        private void ReceiveCallback(IAsyncResult ar)
         {
             int count = clientSocket.EndReceive(ar);
             if (count == 0)
             {
-                CloseRecieving();
+                CloseReceiving();
             }
             message.ReadMessage(count,OnProcessMessage);
             StartRecieving();
         }
 
-        private void CloseRecieving()
+        private void CloseReceiving()
         {
             ConnectionHelper.CloseConnection(mySqlConnection);
             if (clientSocket != null)
