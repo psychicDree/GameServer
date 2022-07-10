@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20838397-bd90-484f-b81d-a7683c9d4437" name="Changes" comment="" />
+    <list default="true" id="20838397-bd90-484f-b81d-a7683c9d4437" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.vs/GameServer/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/GameServer/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/ActionCode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/ActionCode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/RequestCode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/RequestCode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/ReturnCode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/ReturnCode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/obj/Debug/Common.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Common/obj/Debug/Common.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/obj/Debug/Common.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Common/obj/Debug/Common.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/Controller/ControllerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/Controller/ControllerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/Controller/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/Controller/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/DAO/UserDAO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/DAO/UserDAO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/GameServer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/GameServer.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/Model/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/Model/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/Servers/Client.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/Servers/Client.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/Servers/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/Servers/Message.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/Servers/Server.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/Servers/Server.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/bin/Debug/Common.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/bin/Debug/Common.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/bin/Debug/Common.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/bin/Debug/Common.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/bin/Debug/GameServer.exe" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/bin/Debug/GameServer.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/bin/Debug/GameServer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/bin/Debug/GameServer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/obj/Debug/GameServer.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/obj/Debug/GameServer.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/obj/Debug/GameServer.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/obj/Debug/GameServer.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/obj/Debug/GameServer.exe" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/obj/Debug/GameServer.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameServer/obj/Debug/GameServer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameServer/obj/Debug/GameServer.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,13 +36,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

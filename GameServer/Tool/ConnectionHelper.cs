@@ -9,8 +9,7 @@ namespace GameServer.Tool
 {
     internal class ConnectionHelper
     {
-        private const string CONNECTIONTODB =
-            "datasource=remotemysql.com;port=3306;database=253U0l32wa;UserID=253U0l32wa;Password=WLCv8ca8Bz;";
+        private const string CONNECTIONTODB = "datasource=127.0.0.1;port=3306;database=gameserver;UserID=root;Password=admin;";
 
         public static MySqlConnection Connect()
         {

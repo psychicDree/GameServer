@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 //using System.Threading.Tasks;
@@ -41,7 +42,8 @@ namespace GameServer.Servers
                 {
                     RequestCode requestCode = (RequestCode)BitConverter.ToInt32(data, 4);
                     ActionCode actionCode = (ActionCode)BitConverter.ToInt32(data, 8);
-                    string str = Encoding.UTF8.GetString(data, 12, count - 4);
+                    string str = Encoding.UTF8.GetString(data, 12, count - 8);
+                    Console.WriteLine($"{requestCode},{actionCode},{str}");
                     OnProcessDataCallback(requestCode, actionCode, str);
                     Array.Copy(data, count + 4, data, 0, startIndex - 4 - count);
                     startIndex -= count + 4;
@@ -54,6 +56,7 @@ namespace GameServer.Servers
 
         public static byte[] PackData(ActionCode actionCode, string data)
         {
+            Console.WriteLine($"{actionCode},{data}");
             byte[] actionCodeBytes = BitConverter.GetBytes((int)actionCode);
             byte[] dataBytes = Encoding.UTF8.GetBytes(data);
             int newDataAmount = actionCodeBytes.Length + dataBytes.Length;

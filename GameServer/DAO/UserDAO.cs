@@ -55,10 +55,7 @@ namespace GameServer.DAO
                 if (reader.HasRows) return true;
                 else return false;
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            catch (Exception e) { Console.WriteLine(e); }
             finally{ reader.Close(); }
 
             return false;

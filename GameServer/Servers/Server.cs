@@ -12,6 +12,7 @@ namespace GameServer.Servers
         private readonly IPEndPoint ipEndPoint;
         private Socket serverSocket;
         private List<Client> clientList = new List<Client>();
+        private List<Room> roomList = new List<Room>();
         private ControllerManager controllerManager;
         public Server(string ipString,int port)
         {
@@ -50,6 +51,35 @@ namespace GameServer.Servers
         public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, Client client)
         {
             controllerManager.HandleRequest(requestCode, actionCode, data, client);
+        }
+
+        public void CreateRoom(Client client)
+        {
+            Room room = new Room(this);
+            room.AddClient(client);
+            roomList.Add(room);
+        }
+
+        public List<Room> GetRoomList()
+        {
+            return roomList;
+        }
+
+        public void RemoveRoom(Room room)
+        {
+            if (roomList != null && room != null)
+            {
+                roomList.Remove(room);
+            }
+        }
+
+        public Room GetRoomById(int id)
+        {
+            foreach (var room in roomList)
+            {
+                if(room.GetRoomId() == id) return room;
+            }
+            return null;
         }
     }
 }
