@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Common;
 
@@ -74,7 +75,29 @@ namespace GameServer.Servers
 
         public void BroadCastMessage(Client otherClient, ActionCode actionCode, string data)
         {
-
+            foreach(var client in clientsInRoom)
+            {
+                if(otherClient !=client) server.SendResponse(client, actionCode, data);
+            }
+        }
+        public bool IsHouseOwner(Client client)
+        {
+            return client == clientsInRoom[0];
+        }
+        Thread timerThread = null;
+        public void StartTimer()
+        {
+            new Thread(RunTimer).Start();
+        }
+        private void RunTimer()
+        {
+            Thread.Sleep(1000);
+            for (int i = 3; i > 0; i--)
+            {
+                BroadCastMessage(null, ActionCode.StartTimer, i.ToString());
+                Thread.Sleep(1000);
+            }
+            BroadCastMessage(null, ActionCode.StartPlay, "");
         }
     }
 }

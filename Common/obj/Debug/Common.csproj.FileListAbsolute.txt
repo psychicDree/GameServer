@@ -16,3 +16,9 @@ E:\Github\GameServer\Common\obj\Debug\Common.pdb
 E:\Github\GameClient\Assets\Plugins\Common.dll.config
 E:\Github\GameClient\Assets\Plugins\Common.dll
 E:\Github\GameClient\Assets\Plugins\Common.pdb
+C:\Users\hp\Documents\GameServer\GameClient\Assets\Plugins\Common.dll.config
+C:\Users\hp\Documents\GameServer\GameClient\Assets\Plugins\Common.dll
+C:\Users\hp\Documents\GameServer\GameClient\Assets\Plugins\Common.pdb
+C:\Users\hp\Documents\GameClient\Assets\Plugins\Common.dll.config
+C:\Users\hp\Documents\GameClient\Assets\Plugins\Common.dll
+C:\Users\hp\Documents\GameClient\Assets\Plugins\Common.pdb
