@@ -72,7 +72,7 @@ namespace GameServer.Servers
             return sb.ToString();
         }
 
-        public void BroadCastMessage(Client client, ActionCode actionCode)
+        public void BroadCastMessage(Client otherClient, ActionCode actionCode, string data)
         {
 
         }

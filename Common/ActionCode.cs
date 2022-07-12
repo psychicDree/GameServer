@@ -10,6 +10,7 @@ namespace Common
         Register,
         CreateRoom,
         JoinRoom,
-        ListRoom
+        ListRoom,
+        UpdateRoom
     }
 }
