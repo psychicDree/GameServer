@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 namespace Common
 {
     public enum ActionCode
@@ -10,6 +8,10 @@ namespace Common
         Register,
         CreateRoom,
         JoinRoom,
-        ListRoom
+        ListRoom,
+        UpdateRoom,
+        StartGame,
+        StartTimer,
+        StartPlay
     }
 }

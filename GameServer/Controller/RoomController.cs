@@ -37,9 +37,6 @@ namespace GameServer.Controller
 
         public string JoinRoom(string data, Client client, Server server)
         {
-            //Console.WriteLine(data);
-            //string res = data.Substring(0, 1);
-            //int id = int.Parse(res);
             int id = int.Parse(data);
             Room room = server.GetRoomById(id);
             if(room==null) return ((int)ReturnCode.NotFound).ToString();
@@ -48,6 +45,7 @@ namespace GameServer.Controller
             {
                 room.AddClient(client);
                 string roomData = room.GetRoomData();
+                room.BroadCastMessage(client, ActionCode.UpdateRoom, roomData);
                 return ((int)ReturnCode.Success).ToString() + "-" + roomData;
             }
         }

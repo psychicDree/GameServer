@@ -19,7 +19,8 @@ namespace GameServer.Servers
         private User user;
         private Result result;
         private Room room;
-        public Room Room { set => room = value; }
+        public Room Room { set => room = value; get => room; }
+
         private MySqlConnection mySqlConnection;
         public MySqlConnection MySqlConnection =>mySqlConnection;
         public Client(Socket clientSocket, Server server)
@@ -78,6 +79,10 @@ namespace GameServer.Servers
         public int GetUserId()
         {
             return user.Id;
+        }
+        public bool IsHouseOwner()
+        {
+            return Room.IsHouseOwner(this);
         }
     }
 }
