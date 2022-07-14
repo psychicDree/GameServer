@@ -1,7 +1,6 @@
 E:\Github\GameServer\GameServer\bin\Debug\GameServer.exe.config
 E:\Github\GameServer\GameServer\bin\Debug\GameServer.exe
 E:\Github\GameServer\GameServer\bin\Debug\GameServer.pdb
-E:\Github\GameServer\GameServer\bin\Debug\BouncyCastle.Crypto.dll
 E:\Github\GameServer\GameServer\bin\Debug\Common.dll
 E:\Github\GameServer\GameServer\bin\Debug\Google.Protobuf.dll
 E:\Github\GameServer\GameServer\bin\Debug\K4os.Compression.LZ4.dll
@@ -10,7 +9,6 @@ E:\Github\GameServer\GameServer\bin\Debug\K4os.Hash.xxHash.dll
 E:\Github\GameServer\GameServer\bin\Debug\MySql.Data.dll
 E:\Github\GameServer\GameServer\bin\Debug\System.Buffers.dll
 E:\Github\GameServer\GameServer\bin\Debug\System.Memory.dll
-E:\Github\GameServer\GameServer\bin\Debug\System.Numerics.Vectors.dll
 E:\Github\GameServer\GameServer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 E:\Github\GameServer\GameServer\bin\Debug\Ubiety.Dns.Core.dll
 E:\Github\GameServer\GameServer\bin\Debug\ZstdNet.dll
@@ -22,7 +20,6 @@ E:\Github\GameServer\GameServer\bin\Debug\K4os.Compression.LZ4.xml
 E:\Github\GameServer\GameServer\bin\Debug\K4os.Compression.LZ4.Streams.xml
 E:\Github\GameServer\GameServer\bin\Debug\K4os.Hash.xxHash.xml
 E:\Github\GameServer\GameServer\bin\Debug\MySql.Data.xml
-E:\Github\GameServer\GameServer\bin\Debug\System.Buffers.xml
 E:\Github\GameServer\GameServer\bin\Debug\System.Memory.xml
 E:\Github\GameServer\GameServer\bin\Debug\System.Numerics.Vectors.xml
 E:\Github\GameServer\GameServer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

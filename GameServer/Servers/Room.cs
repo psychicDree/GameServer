@@ -97,7 +97,7 @@ namespace GameServer.Servers
                 BroadCastMessage(null, ActionCode.StartTimer, i.ToString());
                 Thread.Sleep(1000);
             }
-            BroadCastMessage(null, ActionCode.StartPlay, "");
+            BroadCastMessage(null, ActionCode.StartPlay, "r");
         }
     }
 }

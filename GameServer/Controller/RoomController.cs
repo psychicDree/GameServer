@@ -19,7 +19,7 @@ namespace GameServer.Controller
         public string CreateRoom(string data, Client client, Server server)
         {
             server.CreateRoom(client);
-            return ((int)ReturnCode.Success).ToString();
+            return ((int)ReturnCode.Success).ToString()+","+((int)RoleType.Blue).ToString();
         }
 
         public string ListRoom(string data, Client client, Server server)
@@ -46,7 +46,7 @@ namespace GameServer.Controller
                 room.AddClient(client);
                 string roomData = room.GetRoomData();
                 room.BroadCastMessage(client, ActionCode.UpdateRoom, roomData);
-                return ((int)ReturnCode.Success).ToString() + "-" + roomData;
+                return ((int)ReturnCode.Success).ToString()+ "," + ((int)RoleType.Red).ToString() + "-" + roomData;
             }
         }
     }

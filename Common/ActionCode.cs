@@ -12,6 +12,7 @@ namespace Common
         UpdateRoom,
         StartGame,
         StartTimer,
-        StartPlay
+        StartPlay,
+        Move
     }
 }
