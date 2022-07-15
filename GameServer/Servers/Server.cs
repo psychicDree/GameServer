@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Common;
+using GameServer.Controller;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
-using Common;
-using GameServer.Controller;
 
 namespace GameServer.Servers
 {
@@ -14,14 +14,14 @@ namespace GameServer.Servers
         private List<Client> clientList = new List<Client>();
         private List<Room> roomList = new List<Room>();
         private ControllerManager controllerManager;
-        public Server(string ipString,int port)
+        public Server(string ipString, int port)
         {
-            this.ipEndPoint = new IPEndPoint(IPAddress.Parse(ipString),port);
+            this.ipEndPoint = new IPEndPoint(IPAddress.Parse(ipString), port);
             this.controllerManager = new ControllerManager(this);
         }
 
         public void StartServer()
-        { 
+        {
             serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             serverSocket.Bind(ipEndPoint);
             serverSocket.Listen(0);
@@ -77,7 +77,7 @@ namespace GameServer.Servers
         {
             foreach (var room in roomList)
             {
-                if(room.GetRoomId() == id) return room;
+                if (room.GetRoomId() == id) return room;
             }
             return null;
         }

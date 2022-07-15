@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GameServer.Model;
+﻿using GameServer.Model;
 using MySql.Data.MySqlClient;
+using System;
 
 namespace GameServer.DAO
 {
@@ -39,7 +35,7 @@ namespace GameServer.DAO
             }
             finally
             {
-                if(reader != null)
+                if (reader != null)
                     reader.Close();
             }
 

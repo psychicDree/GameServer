@@ -47,7 +47,7 @@ namespace GameServer.Servers
                 else
                     break;
             }
-            
+
         }
 
         public static byte[] PackData(ActionCode actionCode, string data)

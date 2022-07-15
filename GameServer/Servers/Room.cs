@@ -1,16 +1,16 @@
-﻿using System;
+﻿using Common;
 using System.Collections.Generic;
-using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using Common;
 
 namespace GameServer.Servers
 {
     internal class Room
     {
-        enum RoomState{ WaitingJoin, WaitingBattle, Battle, End }
+        enum RoomState { WaitingJoin, WaitingBattle, Battle, End }
+
+        private const int maxHP = 200;
         private List<Client> clientsInRoom = new List<Client>();
         private RoomState state = RoomState.WaitingJoin;
         private Server server;
@@ -23,13 +23,13 @@ namespace GameServer.Servers
         {
             clientsInRoom.Add(client);
             client.Room = this;
+            client.HP = maxHP;
             if (clientsInRoom.Count >= 2) state = RoomState.WaitingBattle;
         }
 
         public void QuitRoom(Client client)
         {
-            server.RemoveRoom(this);
-            if(client == clientsInRoom[0])
+            if (client == clientsInRoom[0])
             {
                 CloseRoom();
             }
@@ -37,12 +37,12 @@ namespace GameServer.Servers
             {
                 clientsInRoom.Remove(client);
             }
-                
+
         }
 
         private void CloseRoom()
         {
-            
+            server.RemoveRoom(this);
         }
 
         public bool IsWaitingJoin()
@@ -56,7 +56,7 @@ namespace GameServer.Servers
 
         public int GetRoomId()
         {
-            if(clientsInRoom.Count > 0)
+            if (clientsInRoom.Count > 0)
                 return clientsInRoom[0].GetUserId();
             return -1;
         }
@@ -75,9 +75,9 @@ namespace GameServer.Servers
 
         public void BroadCastMessage(Client otherClient, ActionCode actionCode, string data)
         {
-            foreach(var client in clientsInRoom)
+            foreach (var client in clientsInRoom)
             {
-                if(otherClient !=client) server.SendResponse(client, actionCode, data);
+                if (otherClient != client) server.SendResponse(client, actionCode, data);
             }
         }
         public bool IsHouseOwner(Client client)
@@ -98,6 +98,32 @@ namespace GameServer.Servers
                 Thread.Sleep(1000);
             }
             BroadCastMessage(null, ActionCode.StartPlay, "r");
+        }
+
+        public void Takedamage(int damage, Client otherClient)
+        {
+            bool isDead = false;
+            foreach (var client in clientsInRoom)
+            {
+                if (client != otherClient)
+                {
+                    if (client.TakeDamage(damage))
+                    {
+                        isDead = true;
+                    }
+                }
+            }
+
+            
+            if(isDead)
+            {
+                foreach (var client in clientsInRoom)
+                {
+                    if(client.IsDead()) client.SendFromClient(ActionCode.GameOver, ((int)ReturnCode.GameLost).ToString());
+                    else client.SendFromClient(ActionCode.GameOver, ((int)ReturnCode.GameWon).ToString());
+                }
+            }
+            else return;
         }
     }
 }

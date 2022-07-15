@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GameServer.Model;
+﻿using GameServer.Model;
 using MySql.Data.MySqlClient;
+using System;
 
 namespace GameServer.DAO
 {
@@ -48,7 +44,7 @@ namespace GameServer.DAO
             MySqlDataReader reader = null;
             try
             {
-                MySqlCommand cmd = 
+                MySqlCommand cmd =
                     new MySqlCommand("select * from user where username=@username ", connection);
                 cmd.Parameters.AddWithValue("username", username);
                 reader = cmd.ExecuteReader();
@@ -56,7 +52,7 @@ namespace GameServer.DAO
                 else return false;
             }
             catch (Exception e) { Console.WriteLine(e); }
-            finally{ reader.Close(); }
+            finally { reader.Close(); }
 
             return false;
         }
@@ -65,7 +61,7 @@ namespace GameServer.DAO
         {
             try
             {
-                MySqlCommand cmd = 
+                MySqlCommand cmd =
                     new MySqlCommand("insert into user set username=@username,password=@password", connection);
                 cmd.Parameters.AddWithValue("username", username);
                 cmd.Parameters.AddWithValue("password", password);

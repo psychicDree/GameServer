@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Common;
+﻿using Common;
 using GameServer.DAO;
 using GameServer.Model;
 using GameServer.Servers;
@@ -42,8 +37,8 @@ namespace GameServer.Controller
             var username = str[0];
             var password = str[1];
             var response = userDAO.GetUserByUsername(client.MySqlConnection, username);
-            if(response) return ((int)ReturnCode.Failed).ToString();
-            userDAO.AddUser(client.MySqlConnection,username,password);
+            if (response) return ((int)ReturnCode.Failed).ToString();
+            userDAO.AddUser(client.MySqlConnection, username, password);
             return ((int)ReturnCode.Success).ToString();
         }
     }

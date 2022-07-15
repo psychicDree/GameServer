@@ -5,6 +5,8 @@ namespace Common
     {
         Success,
         NotFound,
-        Failed
+        Failed,
+        GameLost,
+        GameWon
     }
 }

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using Common;
+﻿using Common;
 using GameServer.Model;
 using GameServer.Tool;
 using MySql.Data.MySqlClient;
+using System;
+using System.Net.Sockets;
 
 namespace GameServer.Servers
 {
@@ -19,10 +15,12 @@ namespace GameServer.Servers
         private User user;
         private Result result;
         private Room room;
+        private int hp;
+        public int HP { get => hp; set => hp = value; }
         public Room Room { set => room = value; get => room; }
 
         private MySqlConnection mySqlConnection;
-        public MySqlConnection MySqlConnection =>mySqlConnection;
+        public MySqlConnection MySqlConnection => mySqlConnection;
         public Client(Socket clientSocket, Server server)
         {
             this.clientSocket = clientSocket;
@@ -33,7 +31,8 @@ namespace GameServer.Servers
         public void SendFromClient(ActionCode actionCode, string data)
         {
             byte[] bytes = Message.PackData(actionCode, data);
-            clientSocket.Send(bytes);
+            if(clientSocket!=null && bytes != null)
+                clientSocket.Send(bytes);
         }
         public void StartRecieving()
         {
@@ -73,7 +72,7 @@ namespace GameServer.Servers
 
         public string GetUserData()
         {
-            return user.Id +"," + user.Username + "," + result.TotalCount + "," + result.WinCount;
+            return user.Id + "," + user.Username + "," + result.TotalCount + "," + result.WinCount;
         }
 
         public int GetUserId()
@@ -83,6 +82,19 @@ namespace GameServer.Servers
         public bool IsHouseOwner()
         {
             return Room.IsHouseOwner(this);
+        }
+
+        public bool TakeDamage(int damage)
+        {
+            hp -= damage;
+            hp = Math.Max(hp, 0);
+            if (hp <= 0) return true;
+            else return false;
+        }
+
+        public bool IsDead()
+        {
+            return hp <= 0;
         }
     }
 }

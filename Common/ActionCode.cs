@@ -13,6 +13,9 @@ namespace Common
         StartGame,
         StartTimer,
         StartPlay,
-        Move
+        Move,
+        Shoot,
+        Attack,
+        GameOver
     }
 }

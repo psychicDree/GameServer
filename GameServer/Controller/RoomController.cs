@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using Common;
-using GameServer.Model;
 using GameServer.Servers;
+using System.Text;
 
 namespace GameServer.Controller
 {
@@ -19,7 +15,7 @@ namespace GameServer.Controller
         public string CreateRoom(string data, Client client, Server server)
         {
             server.CreateRoom(client);
-            return ((int)ReturnCode.Success).ToString()+","+((int)RoleType.Blue).ToString();
+            return ((int)ReturnCode.Success).ToString() + "," + ((int)RoleType.Blue).ToString();
         }
 
         public string ListRoom(string data, Client client, Server server)
@@ -39,14 +35,14 @@ namespace GameServer.Controller
         {
             int id = int.Parse(data);
             Room room = server.GetRoomById(id);
-            if(room==null) return ((int)ReturnCode.NotFound).ToString();
-            else if(!room.IsWaitingJoin()) return ((int)ReturnCode.Failed).ToString();
+            if (room == null) return ((int)ReturnCode.NotFound).ToString();
+            else if (!room.IsWaitingJoin()) return ((int)ReturnCode.Failed).ToString();
             else
             {
                 room.AddClient(client);
                 string roomData = room.GetRoomData();
                 room.BroadCastMessage(client, ActionCode.UpdateRoom, roomData);
-                return ((int)ReturnCode.Success).ToString()+ "," + ((int)RoleType.Red).ToString() + "-" + roomData;
+                return ((int)ReturnCode.Success).ToString() + "," + ((int)RoleType.Red).ToString() + "-" + roomData;
             }
         }
     }
