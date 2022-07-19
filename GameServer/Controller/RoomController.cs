@@ -16,13 +16,13 @@ namespace GameServer.Controller
             requestCode = RequestCode.Room;
         }
 
-        public string CreateRoom(string data, Client client, Server server)
+        public string CreateRoom(string data, Client client, Servers.Server server)
         {
             server.CreateRoom(client);
             return ((int)ReturnCode.Success).ToString();
         }
 
-        public string ListRoom(string data, Client client, Server server)
+        public string ListRoom(string data, Client client, Servers.Server server)
         {
             StringBuilder sb = new StringBuilder();
             foreach (var room in server.GetRoomList())
@@ -35,7 +35,7 @@ namespace GameServer.Controller
             return sb.ToString();
         }
 
-        public string JoinRoom(string data, Client client, Server server)
+        public string JoinRoom(string data, Client client, Servers.Server server)
         {
             int id = int.Parse(data);
             Room room = server.GetRoomById(id);

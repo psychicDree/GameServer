@@ -13,8 +13,8 @@ namespace GameServer.Controller
     {
         private readonly Dictionary<RequestCode, BaseController> controllerDict = new Dictionary<RequestCode, BaseController>();
 
-        private Server server;
-        public ControllerManager(Server server)
+        private Servers.Server server;
+        public ControllerManager(Servers.Server server)
         {
             this.server = server;
             OnInit();

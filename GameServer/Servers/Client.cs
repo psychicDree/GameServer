@@ -22,7 +22,7 @@ namespace GameServer.Servers
         public Room Room { set => room = value; get => room; }
 
         private MySqlConnection mySqlConnection;
-        public MySqlConnection MySqlConnection =>mySqlConnection;
+        public MySqlConnection MySqlConnection => mySqlConnection;
         public Client(Socket clientSocket, Server server)
         {
             this.clientSocket = clientSocket;

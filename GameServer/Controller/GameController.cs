@@ -14,7 +14,7 @@ namespace GameServer.Controller
         {
             requestCode  = RequestCode.Game;
         }
-        public string StartGame(string data, Client client, Server server)
+        public string StartGame(string data, Client client, Servers.Server server)
         {
             bool isHouseOwner = client.IsHouseOwner();
             if (isHouseOwner)

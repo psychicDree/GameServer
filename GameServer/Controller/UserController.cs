@@ -19,7 +19,7 @@ namespace GameServer.Controller
             requestCode = RequestCode.User;
         }
 
-        public string Login(string data, Client client, Server server)
+        public string Login(string data, Client client, Servers.Server server)
         {
             string[] strs = data.Split(',');
             User user = userDAO.VerifyUser(client.MySqlConnection, strs[0], strs[1]);
@@ -36,7 +36,7 @@ namespace GameServer.Controller
             }
         }
 
-        public string Register(string data, Client client, Server server)
+        public string Register(string data, Client client, Servers.Server server)
         {
             string[] str = data.Split(',');
             var username = str[0];
