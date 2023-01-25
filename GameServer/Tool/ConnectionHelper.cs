@@ -5,7 +5,7 @@ namespace GameServer.Tool
 {
     internal class ConnectionHelper
     {
-        private const string CONNECTIONTODB = "datasource=database-1.c3eqnx4aavdb.ap-south-1.rds.amazonaws.com;port=3306;database=gameserver;UserID=admin;Password=rootadmin;";
+        private const string CONNECTIONTODB = "datasource=db-gamedata.cplkhciexfnk.ap-south-1.rds.amazonaws.com;port=3306;database=gamedata;UserID=admin;Password=adminadmin;";
 
         public static MySqlConnection Connect()
         {

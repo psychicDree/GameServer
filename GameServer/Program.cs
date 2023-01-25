@@ -3,9 +3,9 @@ using System;
 
 namespace GameServer
 {
-    internal class Program
+    public abstract class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Server server = new Server("127.0.0.1", 6688);
             server.StartServer();

@@ -4,3 +4,9 @@ E:\Github\GameServer\Common\obj\Debug\Common.csproj.AssemblyReference.cache
 E:\Github\GameServer\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 E:\Github\GameServer\Common\obj\Debug\Common.dll
 E:\Github\GameServer\Common\obj\Debug\Common.pdb
+C:\Users\hp\Documents\GameServer\GameClient\Assets\Plugins\Common.dll
+C:\Users\hp\Documents\GameServer\GameClient\Assets\Plugins\Common.pdb
+C:\Users\hp\Documents\GameServer\GameServer\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\hp\Documents\GameServer\GameServer\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\hp\Documents\GameServer\GameServer\Common\obj\Debug\Common.dll
+C:\Users\hp\Documents\GameServer\GameServer\Common\obj\Debug\Common.pdb

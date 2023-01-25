@@ -33,7 +33,6 @@ C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\System.Buffers.
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\System.Memory.dll
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\Common.pdb
-C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\Common.dll.config
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\Google.Protobuf.pdb
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\Google.Protobuf.xml
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\K4os.Compression.LZ4.xml
@@ -45,7 +44,6 @@ C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\System.Numerics
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\obj\Debug\GameServer.csproj.AssemblyReference.cache
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\obj\Debug\GameServer.csproj.SuggestedBindingRedirects.cache
-C:\Users\hp\Documents\GameServer\GameServer\GameServer\obj\Debug\GameServer.exe.config
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\obj\Debug\GameServer.csproj.CoreCompileInputs.cache
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\obj\Debug\GameServer.csproj.CopyComplete
 C:\Users\hp\Documents\GameServer\GameServer\GameServer\obj\Debug\GameServer.exe
@@ -60,3 +58,9 @@ E:\Github\GameServer\GameServer\bin\Debug\K4os.Compression.LZ4.Streams.xml
 E:\Github\GameServer\GameServer\bin\Debug\K4os.Hash.xxHash.xml
 E:\Github\GameServer\GameServer\bin\Debug\System.Memory.xml
 E:\Github\GameServer\GameServer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\MySql.Data.dll
+C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\ZstdNet.dll
+C:\Users\hp\Documents\GameServer\GameServer\GameServer\bin\Debug\System.Buffers.xml
